@@ -1,0 +1,30 @@
+* {
+  font-family: 'Nunito', sans-serif;
+
+}
+
+@yellow: #14c4c4;
+@white: #fff;
+@grey: #ccc;
+
+
+::-moz-selection { /* Code for Firefox */
+  color: @white;
+  background: @yellow;
+}
+
+::selection {
+  color: @white;
+  background: @yellow;
+}
+
+.taskCompleted{
+  -moz-filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.btn {
+  background-color: @yellow;
+  color: @white;
+}
