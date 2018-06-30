@@ -2,13 +2,12 @@
   font-family: 'Nunito', sans-serif;
 }
 ::-moz-selection {
-  /* Code for Firefox */
   color: #fff;
-  background: #14c4c4;
+  background: #4194c4;
 }
 ::selection {
   color: #fff;
-  background: #14c4c4;
+  background: #4194c4;
 }
 .taskCompleted {
   -moz-filter: grayscale(100%);
@@ -16,6 +15,6 @@
   filter: grayscale(100%);
 }
 .btn {
-  background-color: #14c4c4;
+  background-color: #4194c4;
   color: #fff;
 }

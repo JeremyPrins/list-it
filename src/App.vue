@@ -28,11 +28,11 @@
                     subtasks: [
                         {
                             name: 'Bedrijven mailen en bellen.',
-                            completed: true
+                            completed: false
                         },
                         {
                             name: 'In gesprek gaan met bedrijven.',
-                            completed: true
+                            completed: false
                         },
                         {
                             name: 'Stage opdracht formuleren.',
@@ -44,7 +44,7 @@
                         }
                     ],
                     location: 'Hogeschool Rotterdam Wijnhaven',
-                    deadline: '30-07-2018',
+                    deadline: '30-08-2018',
                     category: 'School',
                     done: false,
                 }, {
@@ -63,7 +63,7 @@
 
                         ],
                     location: 'Thuis',
-                    deadline: '08-07-2018',
+                    deadline: '08-08-2018',
                     category: 'Belastingen',
                     done: false,
                 }],

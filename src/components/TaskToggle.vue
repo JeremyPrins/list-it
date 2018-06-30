@@ -9,6 +9,7 @@
         props: ['todosCount', 'title'],
     name: "task-toggle",
 
+
     }
 </script>
 
@@ -18,11 +19,11 @@
     .task-toggle-container {
         font-size: 40px;
         font-weight: bolder;
-        color: @yellow;
+        color: @primaryColor;
         width: 100%;
         display: block;
         padding: 40px 0 0 20px;
-        border-bottom: @yellow 3px solid;
+        border-bottom: @primaryColor 3px solid;
 
     }
 

@@ -2,9 +2,7 @@
     <div>
         <!-- Button to Open the Modal -->
         <button class="btn" data-toggle="modal" data-target="#newTaskModal" data-backdrop="static"
-                data-keyboard="false" v-on:click="openForm"
-                v-show="!isCreating">
-            New Task
+                data-keyboard="false" v-on:click="openForm">New Task
         </button>
 
         <!-- The Modal -->
@@ -45,20 +43,15 @@
                                        maxlength="20" placeholder="Subtask 2 ...">
                                 <br>
                                 <input class="form-control" v-model="subtasks[2].name" type='text' id="Subtasks3"
-                                            name="Subtasks"
-                                            maxlength="20" placeholder="Subtask 3 ...">
+                                       name="Subtasks"
+                                       maxlength="20" placeholder="Subtask 3 ...">
                                 <br>
                                 <input class="form-control" v-model="subtasks[3].name" type='text' id="Subtasks4"
-                                            name="Subtasks"
-                                            maxlength="20" placeholder="Subtask 4 ...">
+                                       name="Subtasks"
+                                       maxlength="20" placeholder="Subtask 4 ...">
                             </div>
                             <div class="form-group">
                                 <label for="Location">Location</label>
-                                <!--<input ref="autocomplete"-->
-                                <!--placeholder="Search"-->
-                                <!--class="search-location"-->
-                                <!--onfocus="value = ''"-->
-                                <!--type="text" />-->
                                 <input class="form-control" v-model="location" type='text' id="Location"
                                        name="Location" placeholder="Task Location  ...">
                             </div>
@@ -82,7 +75,7 @@
                     <div class="modal-footer">
 
                         <button type="submit" class="btn" data-dismiss="modal"
-                                v-on:click.prevent="sendForm() || closeForm()"> Create Task
+                                v-on:click.prevent="sendForm() || closeForm()">Create Task
                         </button>
                         <button type="button" class="btn" data-dismiss="modal"
                                 v-on:click.prevent="closeForm">Close Form
@@ -107,13 +100,13 @@
                 subtasks: [{
                     name: '',
                     completed: false
-                },{
+                }, {
                     name: '',
                     completed: false
-                },{
+                }, {
                     name: '',
                     completed: false
-                },{
+                }, {
                     name: '',
                     completed: false
                 }],
@@ -157,13 +150,13 @@
                     this.subtasks = [{
                         name: '',
                         completed: false
-                    },{
+                    }, {
                         name: '',
                         completed: false
-                    },{
+                    }, {
                         name: '',
                         completed: false
-                    },{
+                    }, {
                         name: '',
                         completed: false
                     }];
@@ -178,37 +171,23 @@
                 }
 
             }
-        },
-        // mounted() {
-        //     this.autocomplete = new google.maps.places.Autocomplete(
-        //         (this.$refs.autocomplete),
-        //         {types: ['geocode']}
-        //     );
-        //     this.autocomplete.addListener('place_changed', () => {
-        //         let place = this.autocomplete.getPlace();
-        //         let ac = place.address_components;
-        //         let lat = place.geometry.location.lat();
-        //         let lon = place.geometry.location.lng();
-        //         let city = ac[0]["short_name"];
-        //         console.log(`The user picked ${city} with the coordinates ${lat}, ${lon}`);
-        //     });
-        // }
+        }
     };
 </script>
 
 <style scoped lang="less">
     @import (reference) '../assets/less/mainstyles.less';
 
-
-    .btn{
+    .btn {
         margin-top: 20px;
+        margin-left: 20px;
         color: @white;
     }
 
     .new-task-form {
         margin: 20px;
         padding: 10px;
-        border: @yellow 3px solid;
+        border: @primaryColor 3px solid;
     }
 
     .modal-dialog {
@@ -219,7 +198,7 @@
 
             .modal-footer {
                 button {
-                    background-color: @yellow;
+                    background-color: @primaryColor;
                     color: @white;
                 }
 
@@ -227,14 +206,5 @@
         }
     }
 
-    input, textarea {
-        background-color: @yellow;
-        color: @white;
-
-    }
-
-    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: @white;
-    }
 
 </style>

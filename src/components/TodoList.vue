@@ -1,16 +1,21 @@
 <template>
     <div>
-        <task-toggle :todosCount="todos.filter(todo => {return todo.done === false}).length" title="Pending Tasks"></task-toggle>
+        <task-toggle :todosCount="todos.filter(todo => {return todo.done === false}).length"
+                     title="Pending Tasks"></task-toggle>
 
-        <div v-if="todos.filter(todo => {return todo.done === true})"> </div>
+        <div v-if="todos.filter(todo => {return todo.done === true})"></div>
+        <div class="row">
 
-        <todo v-on:delete-todo="deleteTodo" v-on:complete-todo="completeTodo" v-for="todo in todos"
-              :todo.sync="todo" :key="todo.id"  v-show="!todo.done"></todo>
+            <todo v-on:delete-todo="deleteTodo" v-on:complete-todo="completeTodo" v-for="todo in todos"
+                  :todo.sync="todo" :key="todo.id" v-show="!todo.done"></todo>
+        </div>
+        <task-toggle :todosCount="todos.filter(todo => {return todo.done === true}).length" class="taskCompleted"
+                     title="Completed Tasks"></task-toggle>
 
-        <task-toggle :todosCount="todos.filter(todo => {return todo.done === true}).length" title="Completed Tasks"></task-toggle>
-
-        <todo v-on:delete-todo="deleteTodo" v-on:complete-todo="completeTodo" v-for="todo in todos"
-              :todo.sync="todo" :key="todo.id"  v-show="todo.done"></todo>
+        <div class="row">
+            <todo v-on:delete-todo="deleteTodo" v-on:complete-todo="completeTodo" v-for="todo in todos"
+                  :todo.sync="todo" :key="todo.id" v-show="todo.done"></todo>
+        </div>
     </div>
 </template>
 

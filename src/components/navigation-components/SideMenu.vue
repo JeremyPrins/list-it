@@ -1,20 +1,22 @@
 <template>
+    <aside class="sidebar-container col-6 col-md-2">
+        <div class="sidebar-content">
 
-    <aside class="navbar-body col-12 col-md-2">
-        <nav class="navbar-dark">
+            <div class="side-item">
+                <p>Pending Tasks</p>
+                <ul>
+                <li v-for="todo in todos" v-show="!todo.done">{{todo.title}}</li>
+                </ul>
+            </div>
 
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link nav-header" href="#">Pending Tasks</a>
-                </li>
-                <li class="todo-item" v-for="todo in todos" v-show="!todo.done">{{todo.title}}</li>
+            <div class="side-item">
+                <p>Completed Tasks</p>
+                <ul>
+                <li class="todo-item-done" v-for="todo in todos" v-show="todo.done">{{todo.title}}</li>
+                </ul>
+            </div>
 
-                <li class="nav-item">
-                    <a class="nav-link nav-header" href="#">Completed Tasks</a>
-                </li>
-                <li class="todo-item" v-for="todo in todos" v-show="todo.done">{{todo.title}}</li>
-            </ul>
-        </nav>
+        </div>
     </aside>
 
 </template>
@@ -24,7 +26,7 @@
     export default {
         props: ['todos'],
         methods: {
-            trigger(){
+            trigger() {
                 console.log('ddd')
             }
         }
@@ -36,61 +38,54 @@
 <style scoped lang="less">
     @import (reference) '../../assets/less/mainstyles.less';
 
-    .navbar-body {
+    .sidebar-container {
         background-color: @grey;
+
         padding: 0;
-        height: 150vh;
-        width: 305px;
+        height: auto;
+        border-right: @primaryColor 3px solid;
 
-        .navbar-nav {
-
+        .sidebar-content {
             background-color: @white;
-            padding: 0 0 20px 0;
-            border-right: @yellow 3px solid;
+            padding: 0 0 20px 40px;
 
-            .todo-item {
+            li {
+
                 font-size: 16px;
                 font-weight: bold;
-                padding: 0 0 0 30px;
+                padding-left: 50px;
+            }
+            .todo-item-done {
+                text-decoration: line-through;
+                color: @grey;
             }
 
-            .new-task-button {
-                background-color: @yellow;
-                color: @white;
-                font-size: 40px;
-                font-weight: bolder;
-                border: none;
-                text-align: left;
-                padding: 0 0 0 30px;
-                height: 100px;
-                cursor: pointer;
-            }
-
-            .nav-header {
-                font-size: 24px;
-                padding: 20px 0 20px 0;
-            }
             span {
-                color: @yellow;
+                color: @primaryColor;
                 display: inline-block;
             }
 
-            .nav-item {
-                font-size: 20px;
-                font-weight: bold;
-                padding: 0 0 0 30px;
+            .side-item {
+
+                p {
+                    font-weight: bold;
+                    padding-top: 20px;
+                    font-size: 24px;
+                    border-bottom: 3px solid @primaryColor;
+                    margin: 0 20px 0 0;
+                }
+                li {
+                    padding-left: 10px;
+                    padding-top: 5px;
+                }
 
             }
         }
     }
 
-    .navbar-dark .navbar-nav .nav-link {
+    .navbar-nav .nav-link {
         color: #000;
 
-        &:hover {
-            color: @yellow;
-
-        }
     }
 
 
